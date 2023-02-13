@@ -18,7 +18,7 @@ class InquiryForm(forms.Form):
     inquiry_name = forms.CharField(label = "お名前" , required = True , max_length = 20, widget = forms.TextInput)
     inquiry_email = forms.EmailField(label = "メールアドレス" , required = True , max_length = 50, widget = forms.TextInput)
 
-    def form_valid(self):
+    def clean_Inquiry_email(self):
         inquiry_email = self.cleaned_data['inquiry_email']
         if '@' not in inquiry_email:
             raise forms.ValidationError('@を含んだメールアドレスにしてください')

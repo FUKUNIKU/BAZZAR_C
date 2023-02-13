@@ -18,7 +18,7 @@ class MypageView(LoginRequiredMixin, TemplateView):
             customuserid = CustomUser.objects.get(userid = self.request.user.userid)
             registration_store = Store.objects.filter(bp_id_id = customuserid.userid)
             context['registration_store'] = registration_store
-            Store.objects.filter(bp_id_id = customuserid.userid)
+        elif Store.objects.filter(bp_id_id = customuserid.userid):
             storeid = Store.objects.get(bp_id_id = customuserid.userid)
             registration_menu = Menu.objects.filter(store_id_id = storeid.store_id)
             context['registration_menu'] = registration_menu
