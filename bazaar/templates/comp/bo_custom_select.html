@@ -14,7 +14,12 @@
         {% if not registration_store %}
             <a href="{% url 'comp:boStoreCustom' %}">店舗情報の登録</a>
         {% endif %}
-        <a href="{% url 'comp:menucustom' %}">メニュー情報の登録</a>
+        {% if not registration_menu %}
+            <a href="{% url 'comp:menucustom' %}">メニュー情報の登録</a>
+        {% endif %}
+        {% if registration_menu %}
+            <h2>登録済みです。</h2>
+        {% endif %}
     </div>
     {% if not registration_store %}
         <div class = "check">

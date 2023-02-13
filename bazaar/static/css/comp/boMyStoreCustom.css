@@ -63,3 +63,7 @@ main .check :before {
     margin-top: -15px;
     z-index: 0;
   }
+
+main div h2 {
+    margin-top: 95px;
+}
