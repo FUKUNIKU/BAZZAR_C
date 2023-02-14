@@ -35,5 +35,5 @@ class Menu(models.Model):
    about4=models.TextField(verbose_name='紹介文',max_length=300)
 
    def __str__(self):
-      return self.menu_name
+      return self.menu_name1
 

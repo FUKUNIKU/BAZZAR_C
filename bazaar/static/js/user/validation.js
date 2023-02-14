@@ -57,3 +57,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }, false);
 }, false);
+
+function hantei(s_id,r_id){
+    if (s_id == r_id){
+        return true
+    }else{
+        return false
+    }
+
+}

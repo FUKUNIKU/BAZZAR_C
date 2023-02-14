@@ -22,10 +22,7 @@ class UserReservationView(LoginRequiredMixin,ListView):
         reservation = Reservation.objects.filter(reservation_day__gte=dt_now)
         reservation = reservation.filter(user_id_id = self.request.user.userid).order_by('reservation_day')
         
-        store_id = reservation.values_list('store_id_id')
-        store_name = Store.objects.filter(store_id__in = store_id)
         context['reservation'] = reservation
-        context['store_name'] = store_name
         
         return context
         

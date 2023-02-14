@@ -22,11 +22,13 @@
                     <th>代表者名</th>
                     <th>日付</th>
                     <th>人数</th>
+                    <!--
                     <th>メニュー1</th>
                     <th>メニュー2</th>
                     <th>メニュー3</th>
                     <th>メニュー4</th>
                     <th>メニュー5</th>
+                -->
 
                 </tr>
                 {% for re in reservation %}
@@ -35,6 +37,7 @@
                     <td>{{ re.reservation_name }}</td>
                     <td>{{ re.reservation_day }}</td>
                     <td>{{ re.nop }}</td>
+                    <!--
                     {% if menu1_name %}
                     {% for menu1 in menu1_name %}
                     
@@ -96,6 +99,7 @@
                     {% else %}
                         <td></td>
                     {% endif %}
+                    -->
                 </tr>
                 {% endfor %}
             </table>

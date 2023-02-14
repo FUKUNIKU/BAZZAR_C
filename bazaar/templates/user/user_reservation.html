@@ -7,6 +7,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css\user\style_user_reservation_list.css' %}">
+<script src="{% static 'js\user\validation.js' %}"></script>
 {% endblock %}
 
 {% block contents %}
@@ -23,23 +24,11 @@
                 </tr>
                 {% for re in reservation %}
                 <tr>
-                    <td>{{ re.reservation_day }}</td>
-                    {% if store_name %}
-                    {% for store in store_name %}
                     
-                        {% if store.store_name %}
-                        <td>{{ store.store_name }}</td>
-                        {% else %}
-                        <td></td>
-                        {% endif %}
+                    <td>{{ re.reservation_day }}</td>
+                    <td>{{ re.store_id }}</td>
                     
                     {% endfor %}
-                    {% else %}
-                        <td></td>
-                    {% endif %}
-                    <td>{{ store.store_name }}</td>
-                </tr>
-                {% endfor %}
             </table>
         </div>
     </div>

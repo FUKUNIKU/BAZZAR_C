@@ -24,9 +24,11 @@
                 {% for re in reservation %}
                 <tr>
                     <td>{{ re.reservation_day }}</td>
+                    <td>{{ re.store_id }}</td>
+                    <!--
                     {% if store_name %}
                     {% for store in store_name %}
-                    
+                        
                         {% if store.store_name %}
                         <td>{{ store.store_name }}</td>
                         {% else %}
@@ -37,6 +39,7 @@
                     {% else %}
                         <td></td>
                     {% endif %}
+                    -->
                 </tr>
                 {% endfor %}
             </table>

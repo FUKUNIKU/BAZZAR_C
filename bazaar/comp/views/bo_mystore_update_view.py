@@ -8,8 +8,8 @@ from django.core.exceptions import ImproperlyConfigured
 class CompStoreUpdateView(UpdateView):
     model=Store
     fields = ['store_name', 'postal_code', 'adress1', 'adress2','adress3','phone_number',
-    'seat','seat_reservationable','bussiness_hours_start','start_minute','bussiness_hours_end',
-    'end_minute','holiday1','holiday2','holiday3','photo1','photo2','photo3','photo4','photo5','photo6','photo7','photo8','photo9','photo10']
+    'seat','seat','bussiness_hours_start','bussiness_hours_end',
+    'holiday1','holiday2','holiday3','photo1','photo2','photo3','photo4','photo5','photo6','photo7','photo8','photo9','photo10']
     template_name='comp/bo_mystore_update.html'
 
 

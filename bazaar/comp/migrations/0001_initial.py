@@ -58,6 +58,8 @@ class Migration(migrations.Migration):
                 ('reservation_name', models.CharField(blank=True, max_length=20, null=True, verbose_name='予約者名')),
                 ('reservation_mail', models.EmailField(blank=True, max_length=40, null=True, verbose_name='予約者メールアドレス')),
                 ('reservation_day', models.CharField(max_length=20, verbose_name='予約希望日')),
+                ('reservation_mail', models.EmailField(blank=True, max_length=40, null=True, verbose_name='予約者メールアドレス')),
+                ('reservation_day', models.CharField(max_length=20, verbose_name='予約希望日')),
                 ('reservation_phone', models.CharField(blank=True, max_length=11, null=True, verbose_name='予約者電話番号')),
                 ('reservation_hour', models.IntegerField(verbose_name='予約時間')),
                 ('nop', models.IntegerField(verbose_name='予約人数')),

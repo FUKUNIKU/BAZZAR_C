@@ -26,12 +26,6 @@ class LoginCustomUserForm(AuthenticationForm, forms.ModelForm):
         self.fields['password'].widget = forms.PasswordInput(attrs={'required': 'true', 'placeholder': 'パスワード'})
         self.fields['userid'].widget.attrs['name'] = 'userid'
         self.fields['password'].widget.attrs['name'] = 'password'
-
-        # username = self.fields['userid']
-        # password = self.fields['password']
-
-        # username.widget = forms.TextInput(attrs={'required': 'true', 'placeholder': 'ユーザーID'})
-        # password.widget = forms.PasswordInput(attrs={'required': 'true', 'placeholder': 'パスワード'})
         
     class Meta:
         model = CustomUser
@@ -44,8 +38,6 @@ class LoginCustomUserForm(AuthenticationForm, forms.ModelForm):
 class RegisterForm(UserCreationForm):
 
     userid=forms.CharField(label='ユーザーID',min_length=8,max_length=16)
-    #password1=forms.CharField(label='パスワード',min_length=8,max_length=16,widget=forms.PasswordInput)
-    #password2=forms.CharField(label='パスワード(再入力)',min_length=8,max_length=16,widget=forms.PasswordInput)
     username=forms.CharField(label='名前',max_length=20)
     mail=forms.EmailField(label='メールアドレス',max_length=40)
     phone = forms.CharField(label='電話番号' ,max_length = 16)
@@ -69,13 +61,6 @@ class RegisterForm(UserCreationForm):
             user.usertype = 'comp'
             user.save()
         
-# class SaveForm(forms.Form):
-#     userid=forms.CharField(label='ユーザーID',min_length=8,max_length=16)
-#     password=forms.CharField(label='パスワード',min_length=8,max_length=16,widget=forms.PasswordInput)
-#     confirm_password=forms.CharField(label='パスワード(再入力)',min_length=8,max_length=16,widget=forms.PasswordInput)
-#     username=forms.CharField(label='名前',max_length=20)
-#     mail=forms.EmailField(label='メールアドレス',max_length=40)
-#     phone = forms.CharField(label='電話番号' ,max_length = 16)    
 
 class StoreForm(forms.ModelForm):
     class Meta:
