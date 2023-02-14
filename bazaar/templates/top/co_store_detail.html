@@ -67,16 +67,41 @@
                 <p>{{stores.adress1}}{{stores.adress2}}{{stores.adress3}}</p>
 
                 <div class = "feature">
-                    <h2>特徴がないのが特徴！白ごはん専門店！</h2>
-                    <p>石川県金沢市にある大原食堂は創業２００年目を迎える老舗白ごはん専門店である。今まで・・・・・・・・</p>
+                    <p>{{stores.about | truncatechars:100}}</p>
                 </div>
 
                 <!-- スライドする写真 -->
                 <div class="slider">
+                    {% if stores.photo1 %}
                         <img src="/media/{{stores.photo1}}" alt="sss" class = "image" width="470" , height="190"/>
+                    {% endif %}
+                    {% if stores.photo2 %}
                         <img src="/media/{{stores.photo2}}" alt="" class = "image" width="470" , height="190"/>
+                    {% endif %}
+                    {% if stores.photo3 %}
                         <img src="/media/{{stores.photo3}}" alt="" class = "image" width="470" , height="190"/>
+                    {% endif %}
+                    {% if stores.photo4 %}
                         <img src="/media/{{stores.photo4}}" alt="" class = "image" width="470" , height="190"/>
+                    {% endif %}
+                    {% if stores.photo5 %}
+                        <img src="/media/{{stores.photo5}}" alt="" class = "image" width="470" , height="190"/>
+                    {% endif %}
+                    {% if stores.photo6 %}
+                        <img src="/media/{{stores.photo6}}" alt="" class = "image" width="470" , height="190"/>
+                    {% endif %}
+                    {% if stores.photo7 %}
+                        <img src="/media/{{stores.photo7}}" alt="" class = "image" width="470" , height="190"/>
+                    {% endif %}
+                    {% if stores.photo8 %}
+                        <img src="/media/{{stores.photo8}}" alt="" class = "image" width="470" , height="190"/>
+                    {% endif %}
+                    {% if stores.photo9 %}
+                        <img src="/media/{{stores.photo9}}" alt="" class = "image" width="470" , height="190"/>
+                    {% endif %}
+                    {% if stores.photo10 %}
+                        <img src="/media/{{stores.photo10}}" alt="" class = "image" width="470" , height="190"/>
+                    {% endif %}
                 </div>
 
                 <!-- 商品の説明 -->
@@ -87,22 +112,22 @@
                             <div class = "top">
                                 <div class = "top-left">
                                     <img src="/media/{{menu.photo1}}" width = "200px" height = "125px" alt="">
-                                    <p>{{menu.about1 | truncatechars:75}}</p>
+                                    <p>{{menu.about1 | truncatechars:74}}</p>
                                 </div>
 
                                 <div class = "top-right">
                                     <img src="/media/{{menu.photo2}}" width = "200px" height = "125px" alt="">
-                                    <p>{{menu.about2 | truncatechars:75}}</p>
+                                    <p>{{menu.about2 | truncatechars:74}}</p>
                                 </div>
                             </div>
                             <div class = "under">
                                 <div class = "under-left">
                                     <img src="/media/{{menu.photo3}}" width = "200px" height = "125px" alt="">
-                                    <p>{{menu.about3 | truncatechars:75}}</p>
+                                    <p>{{menu.about3 | truncatechars:74}}</p>
                             </div>
                             <div class = "under-right">
                                 <img src="/media/{{menu.photo4}}" width = "200px" height = "125px" alt="">
-                                <p>{{menu.about4 | truncatechars:75}}</p>
+                                <p>{{menu.about4 | truncatechars:74}}</p>
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -137,7 +162,6 @@
                             </div>
                             <div class = "review">
                                 <p>{{kuchikomi.impression}}</p>
-                            </div>
                             </div>
                         {% endif %}
                     {% endfor %}
