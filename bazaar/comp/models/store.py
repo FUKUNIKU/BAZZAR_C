@@ -124,8 +124,8 @@ class Store(models.Model):
     #seatが店全体の席数。seat_reservationableが時間ごとに予約可能な席数
 
     seat=models.IntegerField(verbose_name='席数',validators=[MinValueValidator(0)])
-    bussiness_hours_start=models.IntegerField(verbose_name='営業開始',max_length=3,choices=hour,default="選択してください")
-    bussiness_hours_end=models.IntegerField(verbose_name='営業終了',max_length=3,choices=hour,default=df)
+    bussiness_hours_start=models.IntegerField(verbose_name='営業開始',choices=hour,default="選択してください")
+    bussiness_hours_end=models.IntegerField(verbose_name='営業終了',choices=hour,default=df)
     holiday1=models.CharField(verbose_name="定休日1" ,max_length=4,choices=date,default=cel)
     holiday2=models.CharField(verbose_name="定休日2" ,max_length=4,choices=date,default=none)
     holiday3=models.CharField(verbose_name="定休日3" ,max_length=4,choices=date,default=none)

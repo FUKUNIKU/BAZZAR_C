@@ -65,16 +65,15 @@ class Reservation(models.Model):
     ]
    store_id=models.ForeignKey(Store,to_field='store_id',verbose_name='店舗ID',on_delete=models.PROTECT) 
    user_id=models.ForeignKey(CustomUser,to_field='userid',verbose_name='ユーザーID',max_length=16,on_delete=models.PROTECT,null=True,blank=True)
-   menu1=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー1',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_1')
-   menu2=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー2',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_2')
-   menu3=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー3',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_3')
-   menu4=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー4',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_4')
-   menu5=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー5',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_5')
+   menu1=models.IntegerField(verbose_name='数量')
+   menu2=models.IntegerField(verbose_name='数量')
+   menu3=models.IntegerField(verbose_name='数量')
+   menu4=models.IntegerField(verbose_name='数量')
    reservation_name=models.CharField(verbose_name='予約者名',max_length=20,null=True,blank=True)
    reservation_mail=models.EmailField(verbose_name='予約者メールアドレス',max_length=40,null=True,blank=True)
    reservation_day=models.CharField(verbose_name='予約希望日',max_length=20)
    reservation_phone=models.CharField(verbose_name='予約者電話番号',max_length=11,null=True,blank=True)
-   reservation_hour=models.IntegerField(verbose_name='予約時間',max_length=3)
+   reservation_hour=models.IntegerField(verbose_name='予約時間')
    nop=models.IntegerField(verbose_name='予約人数')
 
    def __str__(self):
