@@ -30,6 +30,22 @@
                       {{ form.reservation_phone.errors }}
                       {{ form.nop.label_tag }}
                       <input type="number" name="nop" id="id_nop" max="{{empty}}">
+                      <label>{{ menu.menu_name1 }}　{{ menu.price1 }}円</label>
+                      <img src="/media/{{menu.photo1}}" width = "200px" height = "125px" alt="">
+                      {{ form.menu1.label_tag }}
+                      <input type="number" name="menu1" id="id_menu1" max="{{empty}}">
+                      <label>{{ menu.menu_name2 }}　{{ menu.price2 }}円</label>
+                      <img src="/media/{{menu.photo2}}" width = "200px" height = "125px" alt="">
+                      {{ form.menu2.label_tag }}
+                      <input type="number" name="menu2" id="id_menu1" max="{{empty}}">
+                      <label>{{ menu.menu_name3 }}　{{ menu.price3 }}円</label>
+                      <img src="/media/{{menu.photo3}}" width = "200px" height = "125px" alt="">
+                      {{ form.menu3.label_tag }}
+                      <input type="number" name="menu3" id="id_menu1" max="{{empty}}">
+                      <label>{{ menu.menu_name4 }}　{{ menu.price4 }}円</label>
+                      <img src="/media/{{menu.photo4}}" width = "200px" height = "125px" alt="">
+                      {{ form.menu4.label_tag }}
+                      <input type="number" name="menu4" id="id_menu1" max="{{empty}}">
              </div>
         </div>
             <button type="submit" name = "submitbutton">　次へ　</button>
