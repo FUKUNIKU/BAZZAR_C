@@ -17,7 +17,7 @@
         <a href="{% url 'user:userCalender' request.user.userid store.store_id %}">予約ページに進む</a>   
         {% else %}
         {% with form as f %}
-        <a href="{% url 'user:userCalender' store.store_id %}">ログインせずに予約する</a>
+        <a href="{% url 'user:userCalender'  store.store_id %}">ログインせずに予約する</a>
         <h2>アカウントをすでにお持ちの方はこちら↓↓</h2><br>
             <div class="inputArea">
                 <p><a href="{% url 'accounts:login' %}">ログインをして予約(ログインページに飛びます)</a></p>

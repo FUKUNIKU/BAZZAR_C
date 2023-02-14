@@ -1,6 +1,7 @@
 from django import forms
 import sys
 import pathlib
+from django.core.mail import EmailMessage
 currentdir = pathlib.Path(__file__).resolve().parent
 sys.path.append(str(currentdir)+"..comp/")
 # from comp.models.business_person import Business_person
@@ -71,7 +72,7 @@ class ReservationForm(forms.ModelForm):
    
     class Meta:
         model= Reservation
-        exclude = ["user_id","menu1","menu2","menu3","menu4","menu5","store_id","reservation_day","reservation_hour"]
+        exclude = ["user_id","menu5","store_id","reservation_day","reservation_hour"]
 
         
 class ReservationLoginForm(forms.ModelForm):
@@ -80,3 +81,30 @@ class ReservationLoginForm(forms.ModelForm):
         model= Reservation
         exclude = ["store_id","user_id","reservation_name","reservation_phone","reservation_mail","menu1","menu2","menu3","menu4","menu5"]
       
+
+
+def send_email(abc):
+    res_day = abc["reservation_day"]
+    res_hour = abc["reservation_hour"]
+    res_name = abc["reservation_name"]
+    res_mail = abc["reservation_mail"]
+    res_phone = abc["reservation_phone"]
+    res_nop = abc["nop"]
+    day=str(res_day)
+    hour=str(res_hour)
+    name=str(res_name)
+    mail=str(res_mail)
+    phone=str(res_phone)
+    nop=str(res_nop)
+    message = "予約内容:{0}\n予約日:{1}\n時間:{1}\nお名前:{1}\nメールアドレス:{2}\n電話番号:{3}\n予約可能席数:{3}".format(day,hour,name,mail,phone,nop)
+    from_email = 'admin@example.com'
+    to_list = [
+        'test@example.com' #宛先
+    ]
+    cc_list = [
+        res_mail #共有したいメールアドレス
+    ]
+
+    message = EmailMessage(body = message, from_email = from_email, to = to_list, cc = cc_list)
+    message.send()
+
