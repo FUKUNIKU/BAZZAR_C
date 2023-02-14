@@ -21,85 +21,27 @@
                 <tr>
                     <th>代表者名</th>
                     <th>日付</th>
+                    <th>時間</th>
                     <th>人数</th>
-                    <!--
                     <th>メニュー1</th>
                     <th>メニュー2</th>
                     <th>メニュー3</th>
                     <th>メニュー4</th>
-                    <th>メニュー5</th>
-                -->
 
                 </tr>
                 {% for re in reservation %}
                 
                 <tr>
+                    
                     <td>{{ re.reservation_name }}</td>
                     <td>{{ re.reservation_day }}</td>
+                    <td>{{ re.reservation_hour }}</td>
                     <td>{{ re.nop }}</td>
-                    <!--
-                    {% if menu1_name %}
-                    {% for menu1 in menu1_name %}
-                    
-                        {% if re.menu1 %}
-                        <td>{{ menu1.menu_name }}</td>
-                        {% else %}
-                        <td>予約なし</td>
-                        {% endif %}
-                    
-                    {% endfor %}
-                    {% else %}
-                        <td>予約なし</td>
-                    {% endif %}
-
-                    {% if menu2_name %}
-                    {% for menu2 in menu2_name %}
-                        {% if re.menu2 %}
-                        <td>{{ menu2.menu_name }}</td>
-                        {% else %}
-                        <td></td>
-                        {% endif %}
-                    {% endfor %}
-                    {% else %}
-                        <td></td>
-                    {% endif %}
-
-                    {% if menu3_name %}
-                    {% for menu3 in menu3_name %}
-                        {% if re.menu3 %}
-                        <td>{{ menu3.menu_name }}</td>
-                        {% else %}
-                        <td></td>
-                        {% endif %}
-                    {% endfor %}
-                    {% else %}
-                        <td></td>
-                    {% endif %}
-
-                    {% if menu4_name %}
-                    {% for menu4 in menu4_name %}
-                        {% if re.menu4 %}
-                        <td>{{ menu4.menu_name }}</td>
-                        {% else %}
-                        <td></td>
-                        {% endif %}
-                    {% endfor %}
-                    {% else %}
-                        <td></td>
-                    {% endif %}
-
-                    {% if menu5_name %}
-                    {% for menu5 in menu5_name %}
-                        {% if re.menu5 %}
-                        <td>{{ menu5.menu_name }}</td>
-                        {% else %}
-                        <td></td>
-                        {% endif %}
-                    {% endfor %}
-                    {% else %}
-                        <td></td>
-                    {% endif %}
-                    -->
+                    <td>{{ re.menu1 }}</td>
+                    <td>{{ re.menu2 }}</td>
+                    <td>{{ re.menu3 }}</td>
+                    <td>{{ re.menu4 }}</td>
+                   
                 </tr>
                 {% endfor %}
             </table>

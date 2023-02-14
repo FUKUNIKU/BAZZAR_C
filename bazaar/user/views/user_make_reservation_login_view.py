@@ -27,10 +27,12 @@ class UserMakeReservationLoginView(FormView):
         return context
     
     def form_valid(self, form):
+         pk=self.kwargs.get('pk2')
          res = form.save(commit=False)
          res.store_id=Store.objects.get(store_id=self.kwargs.get('pk'))
          res.reservation_day=self.kwargs.get('dt')
          res.reservation_hour=self.kwargs.get('hour')
+         res.user_id=CustomUser.objects.get(userid=pk)
          res.save()
          r_store=self.kwargs.get('pk')
          menu=Menu.objects.get(store_id=r_store)
