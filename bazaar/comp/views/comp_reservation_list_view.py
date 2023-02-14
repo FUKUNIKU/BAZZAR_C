@@ -26,8 +26,15 @@ class CompReservationListView(LoginRequiredMixin,ListView):
         store_id = store.store_id
 
         #メニュー名を取得
-        menu = Menu.objects.filter(store_id_id = store_id)
+        menu = Menu.objects.get(store_id_id = store_id)
         menu1 = menu.menu_name1
+        menu2 = menu.menu_name2
+        menu3 = menu.menu_name3
+        menu4 = menu.menu_name4
+        context['menu1']=menu1
+        context['menu2']=menu2
+        context['menu3']=menu3
+        context['menu4']=menu4
 
 
         #予約を取得

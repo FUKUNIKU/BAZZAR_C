@@ -1,7 +1,7 @@
 from django import forms
 from django.core.mail import EmailMessage
 from django.shortcuts import render
-
+from django.core import validators
 
 # def clean_Inquiry_email(value):
 #     if '@' not in value:
@@ -20,7 +20,7 @@ class InquiryForm(forms.Form):
 
     def clean_Inquiry_email(self):
         inquiry_email = self.cleaned_data['inquiry_email']
-        if '@' not in inquiry_email:
+        if '@' in inquiry_email:
             raise forms.ValidationError('@を含んだメールアドレスにしてください')
         return inquiry_email
 

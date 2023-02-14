@@ -38,7 +38,38 @@
             <tr><th>営業時間</th><td>{{ store.bussiness_hours_start }}～{{ store.bussiness_hours_end }}</td></tr>
             <tr><th>定休日</th><td>{{ store.holiday1 }},{{ store.holiday2 }},{{ store.holiday3 }}</td>
             <tr><th>紹介文</th><td>{{ store.about }}</td></tr>
-            <tr><th>写真</th><td><img src="/media/{{store.photo1}}" alt="dinner" width="150px"><img src="/media/{{store.photo2}}" alt="dinner" width="150px"><img src="/media/{{store.photo3}}" alt="dinner" width="150px"><img src="/media/{{store.photo4}}" alt="dinner" width="150px"></td></tr>
+            <tr><th>写真</th><td>
+                {% if store.photo1 %}
+                    <img src="/media/{{store.photo1}}" alt="dinner" width="150px">
+                {% endif %}
+                {% if store.photo2 %}
+                    <img src="/media/{{store.photo2}}" alt="dinner" width="150px">
+                {% endif %}
+                {% if store.photo3 %}
+                    <img src="/media/{{store.photo3}}" alt="dinner" width="150px">
+                {% endif %}
+                {% if store.photo4 %}
+                    <img src="/media/{{store.photo4}}" alt="dinner" width="150px">
+                {% endif %}
+                {% if store.photo5 %}
+                    <img src="/media/{{store.photo5}}" alt="dinner" width="150px">
+                {% endif %}
+                {% if store.photo6 %}
+                    <img src="/media/{{store.photo6}}" alt="dinner" width="150px">
+                {% endif %}
+                {% if store.photo7 %}
+                    <img src="/media/{{store.photo7}}" alt="dinner" width="150px">
+                {% endif %}
+                {% if store.photo8 %}
+                    <img src="/media/{{store.photo8}}" alt="dinner" width="150px">
+                {% endif %}
+                {% if store.photo9 %}
+                    <img src="/media/{{store.photo9}}" alt="dinner" width="150px">
+                {% endif %}
+                {% if store.photo10 %}
+                    <img src="/media/{{store.photo10}}" alt="dinner" width="150px">
+                {% endif %}
+            </td></tr>
             
         </table>
     </div>
