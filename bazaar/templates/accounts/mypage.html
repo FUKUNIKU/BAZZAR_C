@@ -36,13 +36,13 @@
                     <p><a href="{% url 'comp:reservation_list'  %}">予約一覧</a></p>
 
 
-                        <p><a href="{% url 'comp:customselect' request.user.userid %}">店舗情報の登録</a></p>
+                    <p><a href="{% url 'comp:customselect' request.user.userid %}">店舗情報の登録</a></p>
                         
-                        {% if registration_store %}
+                    {% if registration_store %}
 
-                            <p><a href="{% url 'comp:boStoreInfo' request.user.userid %}">登録情報の確認</a></p>
+                        <p><a href="{% url 'comp:boStoreInfo' request.user.userid %}">登録情報の確認</a></p>
 
-                        {% endif %}
+                    {% endif %}
                     <p><a href="{% url 'comp:delete' %}">削除要請</a></p>
 
                     {% else %}
